@@ -37,6 +37,9 @@ export class FetchApiDataService {
       headers: new HttpHeaders(
         {
           Authorization: 'Bearer ' + token,
+          'Access-Control-Allow-Headers': 'Content-Type',
+'Access-Control-Allow-Methods': 'GET',
+'Access-Control-Allow-Origin': '*'
         })
     }).pipe(
       map(this.extractResponseData),
@@ -93,6 +96,9 @@ export class FetchApiDataService {
       headers: new HttpHeaders(
         {
           Authorization: 'Bearer ' + token,
+          'Access-Control-Allow-Headers': 'Content-Type',
+'Access-Control-Allow-Methods': 'GET',
+'Access-Control-Allow-Origin': '*'
         })
     }).pipe(
       map(this.extractResponseData),
@@ -107,8 +113,13 @@ export class FetchApiDataService {
     return this.http.put(apiUrl + 'users/' + username, userDetails, {
       headers: new HttpHeaders(
         {
+          
           Authorization: 'Bearer ' + token,
+          'Access-Control-Allow-Headers': 'Content-Type',
+'Access-Control-Allow-Methods': 'GET',
+'Access-Control-Allow-Origin': '*'
         })
+        
     }).pipe(
       map(this.extractResponseData),
       catchError(this.handleError)
