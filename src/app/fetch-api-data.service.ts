@@ -4,7 +4,7 @@ import { Observable, throwError } from 'rxjs';
 import { catchError, map } from 'rxjs/operators';
 
 //Declaring the api url that will provide data for the client app
-const apiUrl = 'https://evening-caverns-13073.herokuapp.com/';
+const apiUrl = 'http://evening-caverns-13073.herokuapp.com/';
 @Injectable({
   providedIn: 'root'
 })
@@ -37,8 +37,8 @@ export class FetchApiDataService {
       headers: new HttpHeaders(
         {
           Authorization: 'Bearer ' + token,
-          'Access-Control-Allow-Headers': 'Content-Type',
-'Access-Control-Allow-Methods': 'GET',
+          'Access-Control-Allow-Headers': 'Origin, Content-Type, X-Auth-Token',
+'Access-Control-Allow-Methods': 'GET,POST,OPTIONS,DELETE,PUT',
 'Access-Control-Allow-Origin': '*'
         })
     }).pipe(
